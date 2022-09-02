@@ -133,6 +133,7 @@ if (NOT WIN32)
     if (NOT CMAKE_CROSSCOMPILING)
         add_subdirectory(bin/kmstool-enclave)
         add_subdirectory(bin/kmstool-enclave-cli)
+        add_subdirectory(bin/kmstool-enclave-new-cli)
     endif()
     
     find_package(Doxygen OPTIONAL_COMPONENTS dot mscgen dia)
