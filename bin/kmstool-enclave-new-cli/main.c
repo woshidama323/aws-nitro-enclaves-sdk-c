@@ -50,7 +50,7 @@ struct app_ctx {
 };
 
 static void s_usage(int exit_code) {
-    fprintf(stderr, "usage: kmstool_enclave_cli [options]\n");
+    fprintf(stderr, "usage: kmstool_enclave_new_cli [options]\n");
     fprintf(stderr, "\n Options: \n\n");
     fprintf(stderr, "    --region REGION: AWS region to use for KMS\n");
     fprintf(stderr, "    --proxy-port PORT: Connect to KMS proxy on PORT. Default: 8000\n");

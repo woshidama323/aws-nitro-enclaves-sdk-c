@@ -16,13 +16,13 @@ By doing that, this tool can be used by any programming langauge that can intera
 
 1. Copy the generated files to your enclave application directory
    ```
-   $ cp kmstool_enclave_cli <your_enclave_app_directory>/
+   $ cp kmstool_enclave_new_cli <your_enclave_app_directory>/
    $ cp libnsm.so <your_enclave_app_directory>/
    ```
 
 1. Modify your enclave applicaton `Dockerfile` to include those generated files. For example:
    ```
-   COPY kmstool_enclave_cli ./
+   COPY kmstool_enclave_new_cli ./
    COPY libnsm.so ./
    ```
 
@@ -57,7 +57,7 @@ By doing that, this tool can be used by any programming langauge that can intera
    ```
    proc = subprocess.Popen(
        [
-           "/kmstool_enclave_cli",
+           "/kmstool_enclave_new_cli",
            "--region", "us-east-1",
            "--proxy-port", "8000",
            "--aws-access-key-id", access_key_id,
