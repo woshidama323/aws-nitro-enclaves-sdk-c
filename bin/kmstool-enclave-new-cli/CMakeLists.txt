@@ -2,7 +2,7 @@ project(kmstool-enclave C)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_INSTALL_PREFIX}/lib/cmake")
 
-set(KMSTOOL_ENCLAVE_PROJECT_NAME kmstool_enclave_cli)
+set(KMSTOOL_ENCLAVE_PROJECT_NAME kmstool_enclave_new_cli)
 add_executable(${KMSTOOL_ENCLAVE_PROJECT_NAME} "main.c")
 
 aws_set_common_properties(${KMSTOOL_ENCLAVE_PROJECT_NAME})
