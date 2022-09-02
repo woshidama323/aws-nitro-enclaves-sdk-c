@@ -348,7 +348,7 @@ int main(int argc, char **argv) {
     aws_logger_init_standard(&err_logger, app_ctx.allocator, &options);
     aws_logger_set(&err_logger);
 
-    rc = generate(&app_ctx, &ciphertext_decrypted_b64);
+    rc = generate(&app_ctx, &plaintext_decrypted_b64);
 
     if (rc != AWS_OP_SUCCESS) {
         fprintf(stderr, "Could not decrypt\n");
