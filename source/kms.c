@@ -2862,6 +2862,7 @@ int aws_kms_generate_random_blocking(
     rc = s_aws_nitro_enclaves_kms_client_call_blocking(client, kms_target_generate_random, request, &response);
     if (rc != 200) {
         fprintf(stderr, "Got non-200 answer from KMS: %d\n", rc);
+        fprintf(stderr, "why error where is error msg: %f\n", response);
         goto err_clean;
     }
 
