@@ -187,7 +187,7 @@ static int decrypt(struct app_ctx *app_ctx, struct aws_byte_buf *ciphertext_decr
     //need remove , 这里需要增加   
     fprintf(stderr, "configuration.allocator: %s\n",configuration.allocator);
     fprintf(stderr, "configuration.endpoint: %s\n",configuration.endpoint);
-    fprintf(stderr, "configuration.domain: %s\n",configuration.domain);
+    // fprintf(stderr, "configuration.domain: %s\n",configuration.domain);
     fprintf(stderr, "configuration.region: %s\n",configuration.region);
 
 
