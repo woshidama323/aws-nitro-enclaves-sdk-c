@@ -432,6 +432,7 @@ struct aws_nitro_enclaves_rest_response *aws_nitro_enclaves_rest_client_request_
     AWS_ZERO_STRUCT(ctx);
 
     if (aws_mutex_init(&ctx.mutex) != AWS_OP_SUCCESS || aws_condition_variable_init(&ctx.c_var) != AWS_OP_SUCCESS) {
+        fprintf(stderr, "failed  to aws_mutex_init");
         goto err_clean;
     }
 
@@ -442,11 +443,13 @@ struct aws_nitro_enclaves_rest_response *aws_nitro_enclaves_rest_client_request_
 
     ctx.response = aws_mem_calloc(rest_client->allocator, 1, sizeof(struct aws_nitro_enclaves_rest_response));
     if (ctx.response == NULL) {
+        fprintf(stderr, "failed  to ctx.response == NULL request");
         goto err_clean;
     }
     ctx.response->allocator = rest_client->allocator;
     ctx.response->response = aws_http_message_new_response(ctx.response->allocator);
     if (ctx.response->response == NULL) {
+        fprintf(stderr, "failed  to ctx.response->response request");
         goto err_clean;
     }
     aws_byte_buf_init(&ctx.response->__data, rest_client->allocator, 0);
@@ -472,6 +475,7 @@ struct aws_nitro_enclaves_rest_response *aws_nitro_enclaves_rest_client_request_
             (const struct aws_signing_config_base *)&signing_config,
             s_on_sign_complete,
             &ctx) != AWS_OP_SUCCESS) {
+        fprintf(stderr, "failed  to aws_sign_request_aws request");
         goto err_clean;
     }
 
