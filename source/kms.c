@@ -2545,6 +2545,7 @@ static int s_aws_nitro_enclaves_kms_client_call_blocking(
         target,
         aws_byte_cursor_from_string(request));
     if (rest_response == NULL) {
+         fprintf(stderr, ".... s_aws_nitro_enclaves_kms_client_call_blocking......\n");
         return AWS_OP_ERR;
     }
 
