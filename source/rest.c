@@ -425,6 +425,9 @@ struct aws_nitro_enclaves_rest_response *aws_nitro_enclaves_rest_client_request_
     struct aws_byte_cursor path,
     struct aws_byte_cursor target,
     struct aws_byte_cursor data) {
+
+    fprintf(stderr, "start point aws_nitro_enclaves_rest_client_request_blocking....");
+
     AWS_PRECONDITION(rest_client);
     AWS_PRECONDITION(rest_client->connection);
 
