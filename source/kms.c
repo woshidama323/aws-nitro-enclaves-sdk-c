@@ -2665,7 +2665,7 @@ int aws_kms_decrypt_blocking(
 
     rc = s_aws_nitro_enclaves_kms_client_call_blocking(client, kms_target_decrypt, request, &response);
     if (rc != 200) {
-        fprintf(stderr, "Got non-200 answer from KMS: %d\n", rc);
+        fprintf(stderr, "Got harry non-200 answer from KMS: %d\n", rc);
         goto err_clean;
     }
 
