@@ -2561,6 +2561,8 @@ static int s_aws_nitro_enclaves_kms_client_call_blocking(
 
     int status = AWS_OP_SUCCESS;
     aws_http_message_get_response_status(rest_response->response, &status);
+
+    fprintf(stderr, "s_aws_nitro_enclaves_kms_client_call_blocking ** response:%s, status:%d\n",rest_response->response,status);
     aws_nitro_enclaves_rest_response_destroy(rest_response);
 
     return status;
@@ -2827,9 +2829,12 @@ int aws_kms_generate_random_blocking(
     struct aws_nitro_enclaves_kms_client *client,
     uint32_t number_of_bytes,
     struct aws_byte_buf *plaintext /* TODO: err_reason */) {
+    fprintf(stderr, "aws_kms_generate_random_blocking start 1\n");
     AWS_PRECONDITION(client != NULL);
     AWS_PRECONDITION(number_of_bytes > 0);
     AWS_PRECONDITION(plaintext != NULL);
+
+    fprintf(stderr, "aws_kms_generate_random_blocking start 2\n");
 
     struct aws_string *response = NULL;
     struct aws_string *request = NULL;
